@@ -13,6 +13,9 @@ func resourceAzureServicePrincipal() *schema.Resource {
 		Read:   resourceAzureServicePrincipalRead,
 		Update: resourceAzureServicePrincipalUpdate,
 		Delete: resourceAzureServicePrincipalDelete,
+		Importer: &schema.ResourceImporter{
+			State: schema.ImportStatePassthrough,
+		},
 
 		Schema: map[string]*schema.Schema{
 			"name": {
